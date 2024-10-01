@@ -39,7 +39,6 @@ operatorButtons.forEach((button) => button.addEventListener("click", (event) => 
         a = operate(a, b, operator);
         operator = event.target.textContent;
     }
-    console.log(operator);
     inputEmpty = true;
 }))
 
