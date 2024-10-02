@@ -1,6 +1,8 @@
 body{
     display: flex;
     justify-content: center;
+    font-size: xx-large;
+    font-family: monospace;
 }
 
 #content{
@@ -12,7 +14,7 @@ body{
     display: flex;
     flex-direction: column;
     border: solid #d6d5b6 5px;
-    height: 500px;
+    height: 535px;
     width: 500px;
 
 }
@@ -32,7 +34,8 @@ body{
 }
 
 button{
-    border: solid #d6d5b6 5px;
+    font-size: xx-large;
+    border: solid #3e444c 5px;
     flex-grow: 1;
     margin: 0;
     padding: 30px;
@@ -40,17 +43,26 @@ button{
 }
 
 #equals{
+    background-color: #ffa34e;
     flex-basis: 291%;
     flex-grow: 2;
 }
 
 #imgDiv{
-    border: solid #d6d5b6 5px;
+    background-color: #3e444c;
+    border: solid #3e444c 5px;
 
 }
 
 #logo{
-    margin: 0px 12px;
+    margin: 0px 9px;
     height:0;
     min-height:100%;
+}
+
+.num, #period{
+    background-color: #f6feff;
+}
+.op, #clear, #clearE{
+    background-color: #d6d5b6;
 }
