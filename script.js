@@ -41,6 +41,7 @@ clearButton.addEventListener("click", (event) => {
 clearEButton.addEventListener("click", (event) => {
     if ( !displayValue || displayValue.length === 1 ) {
         input.textContent = "0"; 
+        inputEmpty = true;
     } else {
          input.textContent = displayValue.slice(0, -1);
     }
@@ -66,6 +67,7 @@ operatorButtons.forEach((button) => button.addEventListener("click", (event) => 
         b = null;
         operator = event.target.textContent;
     }
+    displayValue = '0';
     inputEmpty = true;
     decimalButton.disabled = false;
 }))
