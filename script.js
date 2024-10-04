@@ -4,6 +4,7 @@ const operatorButtons = document.querySelectorAll(".op");
 const clearButton = document.querySelector("#clear");
 const equalsButton = document.querySelector("#equals")
 const decimalButton = document.querySelector("#decimal");
+const clearEButton = document.querySelector("#clearE");
 let displayValue;
 let a;
 let b;
@@ -35,6 +36,20 @@ clearButton.addEventListener("click", (event) => {
     operator = null;
     a = null;
     b = null;
+})
+
+clearEButton.addEventListener("click", (event) => {
+    if ( !displayValue || displayValue.length === 1 ) {
+        input.textContent = "0"; 
+    } else {
+         input.textContent = displayValue.slice(0, -1);
+    }
+    displayValue = input.textContent;
+    if ( !operator ) {
+        a = displayValue;
+    } else if ( operator ) {
+        b = displayValue;
+    }
 })
 
 operatorButtons.forEach((button) => button.addEventListener("click", (event) => {
