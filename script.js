@@ -35,7 +35,12 @@ clearButton.addEventListener("click", (event) => {
 })
 
 operatorButtons.forEach((button) => button.addEventListener("click", (event) => {
-    if(!operator) {
+    if (operator === '/' && b === '0') {
+        input.textContent = "Can't divide by 0!"
+        a = null;
+        b = null;
+        operator = null;
+    } else if(!operator) {
         operator = event.target.textContent;
     } else {
         input.textContent = operate(a, b, operator);
@@ -47,7 +52,10 @@ operatorButtons.forEach((button) => button.addEventListener("click", (event) => 
 }))
 
 equalsButton.addEventListener("click", (event) => {
-    if ( !operator || !b ) {
+    if (operator === '/' && b === '0') {
+        input.textContent = "Can't divide by 0!"
+        a = null;
+    } else if ( !operator || !b ) {
         a = null;
     } else {
         input.textContent = operate(a,b, operator);
