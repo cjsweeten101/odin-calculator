@@ -20,7 +20,7 @@ numpadButtons.forEach((button) => button.addEventListener("click", (event) => {
     }
     if ( !operator ) {
         a = displayValue;
-    } else if ( operator && !b ) {
+    } else if ( operator ) {
         b = displayValue;
     }
 }));
@@ -48,14 +48,14 @@ operatorButtons.forEach((button) => button.addEventListener("click", (event) => 
 
 equalsButton.addEventListener("click", (event) => {
     if ( !operator || !b ) {
-        input.textContent = a;
-        console.log("hello")
-        inputEmpty = false;
+        a = null;
     } else {
-        input.textContent = operate(a,b, operator)
-        inputEmpty = true;
-        operator = null;
+        input.textContent = operate(a,b, operator);
+        a = operate(a, b, operator);
     }
+    b = null;
+    inputEmpty = true;
+    operator = null;
 })
 
 
