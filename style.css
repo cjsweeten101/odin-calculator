@@ -7,9 +7,10 @@ body{
 }
 
 #content{
+    padding: 8px;
     display: flex;
     flex-direction: column;
-    border: solid #d6d5b6 10px;
+    border: solid #d6d5b6 16px;
     height: 655px;
     flex-basis: 500px;
     background-color: #3e444c;
