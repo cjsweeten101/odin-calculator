@@ -3,6 +3,7 @@ const numpadButtons = document.querySelectorAll(".num");
 const operatorButtons = document.querySelectorAll(".op");
 const clearButton = document.querySelector("#clear");
 const equalsButton = document.querySelector("#equals")
+const decimalButton = document.querySelector("#decimal");
 let displayValue;
 let a;
 let b;
@@ -18,6 +19,8 @@ numpadButtons.forEach((button) => button.addEventListener("click", (event) => {
         input.textContent += event.target.textContent;
         displayValue = input.textContent;
     }
+    if ( button === decimalButton ) {decimalButton.disabled = true};
+
     if ( !operator ) {
         a = displayValue;
     } else if ( operator ) {
@@ -49,6 +52,7 @@ operatorButtons.forEach((button) => button.addEventListener("click", (event) => 
         operator = event.target.textContent;
     }
     inputEmpty = true;
+    decimalButton.disabled = false;
 }))
 
 equalsButton.addEventListener("click", (event) => {
@@ -63,6 +67,7 @@ equalsButton.addEventListener("click", (event) => {
     }
     b = null;
     inputEmpty = true;
+    decimalButton.disabled = false;
     operator = null;
 })
 
