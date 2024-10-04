@@ -8,18 +8,21 @@ body{
 #content{
     display: flex;
     flex-direction: column;
+    border: solid #d6d5b6 10px;
+
 }
 
 #container{
     display: flex;
     flex-direction: column;
-    border: solid #d6d5b6 5px;
     height: 535px;
     width: 500px;
 
 }
 
 #input{
+    background-color: #200c17;
+    color: #b90f48;
 }
 
 #topRow{
